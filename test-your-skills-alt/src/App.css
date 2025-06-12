@@ -1,0 +1,59 @@
+/* Full height */
+html, body, #root, .split-container {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Split screen */
+.split-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Left and Right sections */
+.split {
+  flex: 1;
+  position: relative;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.3; /* Default transparency */
+}
+
+/* Background colors */
+.left {
+  background-color: red;
+}
+
+.right {
+  background-color: blue;
+}
+
+/* Ensure images fully cover their sections */
+.split img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+/* On hover, make the section fully visible */
+.split:hover {
+  opacity: 1;
+}
+
+/* Text styling */
+.split h2 {
+  position: absolute;
+  z-index: 10;
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  /* Text Shadow for Visibility */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
